@@ -1,0 +1,29 @@
+.main{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: medium;
+}
+
+.header{
+    position: absolute;
+    left: 1.5rem;
+}
+
+@media(max-width: 650px){
+    .header{
+        position: relative;
+        left:0px;
+    }
+    .main{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        right:0px;
+    }
+}

@@ -1,0 +1,13 @@
+.tools{
+    margin: 1.5rem;
+    padding: 0.5rem;
+    width: 12rem;
+    display: block;
+    overflow-x: hidden;
+}
+
+.label{
+    position: absolute;
+    left: 3.6rem;
+    bottom: 1rem;
+}

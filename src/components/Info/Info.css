@@ -1,0 +1,29 @@
+.card{
+    position: relative;
+    margin: 2rem;
+    bottom: 1rem;
+    box-shadow: 0 0 0 0.15rem rgb(233,30,99,0.8);
+}
+
+.card-actions{
+    display:flex;
+    justify-content: center;
+}
+
+.card-header{
+    text-align: center;
+}
+
+.card-contents{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 5rem
+}
+
+@media(max-width: 1000px){
+    .card-contents{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
