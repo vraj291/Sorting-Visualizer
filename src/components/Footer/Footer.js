@@ -8,7 +8,7 @@ export const Footer = (props) => {
     return(
         <div style={props.style} className='footer'>
             <div className='info'>
-                <Typography variant='subtitle1'>Designed by Vraj Parikh</Typography>
+                <Typography variant='subtitle1'>Created by Vraj Parikh</Typography>
                 <IconButton onClick={() => window.location='https://www.linkedin.com/in/vraj-parikh-200162193'}>
                     <LinkedIn fontSize="large"/>
                 </IconButton>

@@ -1,5 +1,8 @@
+# Sorting Visualizer
+A Web Application built using ReactJS that is able to showcase the viusalization of various classic and popular sorting algorithms 
+<br>
 
-
+The app is hosted using Github Pages and is available here : [vraj291.github.io/Sorting-Visualizer](http://vraj291.github.io/Sorting-Visualizer)
 
 # Getting Started with Create React App
 

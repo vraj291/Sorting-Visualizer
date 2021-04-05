@@ -1,0 +1,8 @@
+<svg width="272" height="360" viewBox="0 0 272 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M64 137L1 175V359H64V137Z" fill="#E91E63" fill-opacity="0.82"/>
+<path d="M168 1L102 41V359H168V1Z" fill="#E91E63" fill-opacity="0.82"/>
+<path d="M208 359V175L271 137V359H208Z" fill="#E91E63" fill-opacity="0.82"/>
+<path d="M64 137L1 175V359H64V137Z" stroke="black"/>
+<path d="M168 1L102 41V359H168V1Z" stroke="black"/>
+<path d="M208 359V175L271 137V359H208Z" stroke="black"/>
+</svg>
