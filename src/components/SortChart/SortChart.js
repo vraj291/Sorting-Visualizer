@@ -139,20 +139,22 @@ export const SortChart = (props) => {
         displayStep(currentStep-1)
     }
 
-    const handleClear = () => {
+    const handleClear = (len) => {
         reset_timeouts()
         setTrace([])
         setOn(false)
         setCurrentStep(-1)
-        handleGenArray(length)
+        handleGenArray(len)
     }
 
     const clearPrevStep = () => {
-        if(currentStep != -1){
-            let item = trace[currentStep]
-            if(item.x != undefined){ 
-                handleColorChange(item.x,item.y,oricol)
+        let step = currentStep
+        if(step != -1){
+            let item = trace[step]
+            while(item.x == undefined){
+                item = trace[--step]
             }
+            handleColorChange(item.x,item.y,oricol)
         }
     }
 
@@ -169,12 +171,7 @@ export const SortChart = (props) => {
     const skipToLast = () => {
         handlePause()
         setArr(getLastArr(trace))
-        if(currentStep != -1){
-            let item = trace[currentStep]
-            if(item.x != undefined){ 
-                handleColorChange(item.x,item.y,oricol)
-            }
-        }
+        clearPrevStep()
         setCurrentStep(trace.length-1)
     }
 
@@ -190,19 +187,30 @@ export const SortChart = (props) => {
                 orient={orient}
                 len={length}
                 speed={speed}
+                isOn={isOn}
                 style={props.style}
                 handleSpeed={e => setSpeed(e)}
                 handleLen={e => {
                     setLen(e)
-                    if (!(isOn))
-                        handleGenArray(e)
+                    handleClear(e)
                 }}
                 handleAlgo={e =>  {
                     setAlgo(e)
+                    reset_timeouts()
+                    clearPrevStep()
+                    setArr([...trace[0]])
+                    setTrace([])
+                    setOn(false)
+                    setCurrentStep(-1)
                     setTrace([...getTrace([...arr],e,orient)])
                 }}
                 handleOrient={e => {
                     setOrient(e)
+                    reset_timeouts()
+                    setArr([...trace[0]])
+                    setTrace([])
+                    setOn(false)
+                    setCurrentStep(-1)
                     setTrace([...getTrace([...arr],algo,e)])
                 }}
                 handleDarkMode={props.handleDarkMode}
@@ -220,7 +228,7 @@ export const SortChart = (props) => {
                 isOn={isOn}
                 play={handlePlay} 
                 pause={handlePause}
-                clear={handleClear}
+                clear={() => handleClear(length)}
                 forward={handleForward}
                 backward={handleBackward}
                 skip={skipToLast}

@@ -29,9 +29,9 @@ export const Toolbar = (props) => {
         return true
     }()
 
-    return(
-    <Drawer classes={{paper: classes.root}}anchor='right' open={props.drawer} onClose={props.toggle} role="presentation">
-        <div className='tools'> 
+    return(   
+    <Drawer classes={{paper: classes.root}} anchor='right' open={props.drawer} onClose={() => props.toggle(false)} role="presentation">
+    <div className='tools'> 
         <InputLabel className={classes.root}>Speed
             <Slider 
                 className='slider' 

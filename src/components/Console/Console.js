@@ -8,11 +8,8 @@ import './Console.css'
 export const Console = (props) => {
     let [drawer,setDrawer] = useState(false)
 
-    let toggle = () => {
-        if (drawer)
-            setDrawer(false)
-        else
-            setDrawer(true)
+    let toggle = (val) => {
+        setDrawer(val)
     }
 
     return(
@@ -26,6 +23,7 @@ export const Console = (props) => {
             len={props.len}
             speed={props.speed+5}
             style={props.style}
+            isOn={props.isOn}
             handleSpeed={props.handleSpeed}
             handleLen={props.handleLen}
             handleAlgo={props.handleAlgo}
@@ -36,8 +34,8 @@ export const Console = (props) => {
             handleOriColor={props.handleOriColor}
         />
         <div className='buttons'>
-            <Button text='Settings' func={toggle}/>
-            <Button text='Generate New Array' func={props.handleGen} isOn={props.isOn}/>
+            <Button text='Settings' func={() => toggle(true)}/>
+            <Button text='Generate New Array' func={props.handleGen}/>
         </div>
     </div>
 )}
